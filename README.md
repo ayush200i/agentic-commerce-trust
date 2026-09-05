@@ -4,6 +4,10 @@
 
 Razorpay hackathon · Track 1: AI Growth & Agentic Commerce
 
+[![Validate commerce trust layer](https://github.com/ayush200i/agentic-commerce-trust/actions/workflows/ci.yml/badge.svg)](https://github.com/ayush200i/agentic-commerce-trust/actions/workflows/ci.yml)
+
+**Reviewing the submission? Start with the [judge's guide](docs/submission.md).**
+
 A buyer and seller negotiate a purchase through a LangGraph workflow. A policy engine bounds the spend and permitted categories, the operator approves a specific quote, and the payment action is recorded in a SHA-256 hash chain. The stock-failure scenario replaces an unavailable keyboard without exceeding the mandate.
 
 ![Counterseal control room](docs/control-room.png)
@@ -15,6 +19,8 @@ See [validation status](docs/validation.md) for tested behavior and remaining ex
 Requires Node.js 22+, Python 3.12+ and [uv](https://docs.astral.sh/uv/).
 
 ```powershell
+git clone https://github.com/ayush200i/agentic-commerce-trust.git
+cd agentic-commerce-trust
 uv sync --locked
 npm ci
 ```
@@ -76,7 +82,7 @@ npm run demo
 
 The browser suite covers desktop and mobile, stock recovery, approval, rejected quotes, policy failures, catalog/history navigation, payment simulation and an independent JavaScript audit verifier. Tests use fixtures for external providers; passing them is not proof of a real Razorpay payment or a successful OpenAI generation. The local MCP protocol test exercises discovery, schema validation and tool calls through the real SDK against a local fixture server.
 
-Playwright saves recordings, screenshots and audit JSON under ignored `test-results/`. With no development servers running, it starts an isolated database automatically. See [demo narration](docs/demo-script.md).
+Playwright saves recordings, screenshots and audit JSON under ignored `test-results/`. With no development servers running, it starts an isolated database automatically. See the [recorded technical rehearsal](docs/rehearsal.webm) and [demo narration](docs/demo-script.md). The recording uses scripted agents and simulated payments; it is not a provider-verified or narrated final demo.
 
 Download a session receipt from the UI and verify it independently:
 

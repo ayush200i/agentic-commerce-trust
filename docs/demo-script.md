@@ -2,6 +2,8 @@
 
 The default rehearsal is intentionally labeled scripted and simulated. For a hackathon submission demonstrating Razorpay, switch to OpenAI agents and Razorpay test mode after connecting and validating both services. Do not present the rehearsal recording as a provider-verified payment.
 
+A [silent technical rehearsal recording](rehearsal.webm) is included in the repository. It demonstrates the scripted/simulated flow and is not a substitute for a narrated, provider-verified final video.
+
 1. **0:00–0:25 / Problem.** “When an agent buys from another agent, a payment receipt alone doesn't explain whether the purchase was allowed. Counterseal binds each purchase to a mandate and records the decisions that led to it.” Show the ₹5,000 cap, ₹3,000 approval threshold and category allowlist.
 2. **0:25–1:05 / Negotiation.** Start the supplied keyboard-and-mat mandate. Explain the eligible catalog, the seller's bounded discount and why policy is enforced by code rather than a prompt. Expand one decision's evidence.
 3. **1:05–1:35 / Failure.** Show the explicitly simulated stock change. The seller withdraws Arc 75; the buyer proposes Forma 75 within the same category and budget. The optional mat survives only if it fits the policy. No payment is attempted during recovery.
