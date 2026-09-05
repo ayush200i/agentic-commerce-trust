@@ -1,22 +1,24 @@
 # Validation record
 
-Local validation performed on 5 September 2026, Windows, Node 22.16.0 and Python 3.12.3.
+Final local validation performed on 6 September 2026, Windows, Node 22.16.0 and Python 3.12.3.
 
-| Check | Result |
-| --- | --- |
-| Python lint (`ruff check backend scripts tests`) | Passed |
-| Backend (`python -m pytest -q`) | 18 passed |
-| TypeScript and production frontend (`npm run build`) | Passed |
-| Playwright (`npm run test:e2e`) | 8 passed: desktop and mobile |
-| Automated WCAG A/AA checks | Passed on four pages and approval/completed states, desktop and mobile |
-| JavaScript runtime errors during full rehearsal | None observed |
-| Independent receipt verification | Passed in Python unit tests and browser-suite JavaScript verifier |
-| MCP transport | Official Python SDK discovery, schema validation and tool calls passed against a local fixture |
-| Playwright development MCP | Initialized; 24 tools discovered |
-| GitHub | Private project repository created and cloned; feature branch used for the build |
-| OpenAI authentication | Accepted by the models endpoint |
-| OpenAI generation | Blocked: `credit_balance_exhausted` / `insufficient_quota`; the application correctly reports the error |
-| Razorpay hosted MCP / test checkout | Not verified: test key ID and secret are not configured |
+| Check                                                | Result                                                                                                  |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Python lint (`ruff check backend scripts tests`)     | Passed                                                                                                  |
+| Backend (`python -m pytest -q`)                      | 18 passed                                                                                               |
+| TypeScript and production frontend (`npm run build`) | Passed                                                                                                  |
+| Playwright (`npm run test:e2e`)                      | 8 passed: desktop and mobile                                                                            |
+| Automated WCAG A/AA checks                           | Passed on four pages and approval/completed states, desktop and mobile                                  |
+| Keyboard navigation                                  | Skip link focuses main content; visible form focus and tab order verified on desktop and mobile         |
+| Browser-test isolation                               | Dedicated ports, unique database and empty provider credentials preserve the running demo               |
+| JavaScript runtime errors during full rehearsal      | None observed                                                                                           |
+| Independent receipt verification                     | Passed in Python unit tests and browser-suite JavaScript verifier                                       |
+| MCP transport                                        | Official Python SDK discovery, schema validation and tool calls passed against a local fixture          |
+| Playwright development MCP                           | Initialized; 24 tools discovered                                                                        |
+| GitHub                                               | Public repository; submission code and documentation on `main`                                          |
+| OpenAI authentication                                | Accepted by the models endpoint                                                                         |
+| OpenAI generation                                    | Blocked: `credit_balance_exhausted` / `insufficient_quota`; the application correctly reports the error |
+| Razorpay hosted MCP / test checkout                  | Not verified: test key ID and secret are not configured                                                 |
 
 Provider fixtures are explicitly separate from real integration checks. No successful OpenAI agent generation or real Razorpay test capture is claimed. The single backend warning is a dependency deprecation in Starlette's test client, not a failed check.
 

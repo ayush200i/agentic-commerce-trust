@@ -15,4 +15,4 @@ A [silent technical rehearsal recording](rehearsal.webm) is included in the repo
 
 `npm run demo` executes the full rehearsal, saves full-page screenshots, records a WebM and attaches the independently verified audit JSON under `test-results/`. The automated test is a compact technical recording; add the above narration and pacing for a final submission video.
 
-For a clean isolated test database, stop development servers before running the script. Playwright starts its own backend with a unique database. It reuses already running local servers when available, so those servers retain their own data.
+Playwright starts dedicated servers on ports 5174 and 8001 with a unique test database and empty provider credentials. You can leave the development servers running: the recording does not consume their inventory or change their sessions. These two test ports must be free.

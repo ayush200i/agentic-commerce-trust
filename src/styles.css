@@ -1870,3 +1870,26 @@ footer .seal svg {
     scroll-behavior: auto !important;
   }
 }
+
+.skip-link {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  padding: 12px 18px;
+  color: #fff;
+  background: #14213d;
+  border-radius: 4px;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  clip-path: none;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}

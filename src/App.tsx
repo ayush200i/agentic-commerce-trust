@@ -409,6 +409,9 @@ export default function App() {
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <aside className="sidebar">
         <a
           className="brand"
@@ -493,7 +496,7 @@ export default function App() {
             {health ? "Local API online" : "Connecting to API"}
           </span>
         </header>
-        <main>
+        <main id="main-content" tabIndex={-1}>
           <div className="page-heading">
             <div>
               <div className="document-label">

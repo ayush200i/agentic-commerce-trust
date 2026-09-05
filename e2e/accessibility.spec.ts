@@ -4,6 +4,12 @@ import AxeBuilder from "@axe-core/playwright";
 test("keyboard access and WCAG AA checks", async ({ page }, testInfo) => {
   await page.goto("/");
   await expect(page.getByText("Local API online")).toBeVisible();
+  await page.keyboard.press("Tab");
+  await expect(
+    page.getByRole("link", { name: "Skip to main content" }),
+  ).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("main")).toBeFocused();
   for (const view of [
     "Control room",
     "Merchant catalog",

@@ -41,12 +41,12 @@ Open [the control room](http://127.0.0.1:5173). The default **Scripted rehearsal
 
 Copy `.env.example` to `.env.local` only if you do not already have a local credential file. Fill in the file locally; never paste or commit credentials. Restart the API after changing environment values.
 
-| Variable | Purpose |
-| --- | --- |
-| `OPENAI_API_KEY` | OpenAI API key with Responses API access and available API credits |
-| `OPENAI_MODEL` | Defaults to `gpt-4.1-mini`; change to a model available to your project |
-| `RAZORPAY_KEY_ID` | Test key beginning with `rzp_test_` |
-| `RAZORPAY_KEY_SECRET` | Matching Razorpay test secret |
+| Variable              | Purpose                                                                 |
+| --------------------- | ----------------------------------------------------------------------- |
+| `OPENAI_API_KEY`      | OpenAI API key with Responses API access and available API credits      |
+| `OPENAI_MODEL`        | Defaults to `gpt-4.1-mini`; change to a model available to your project |
+| `RAZORPAY_KEY_ID`     | Test key beginning with `rzp_test_`                                     |
+| `RAZORPAY_KEY_SECRET` | Matching Razorpay test secret                                           |
 
 In **Connections**, check Razorpay MCP connectivity. Then select **OpenAI agents** and **Razorpay test via MCP** before starting a new negotiation. A configured key is not a successful provider check. OpenAI errors stop the session visibly; no silent scripted fallback occurs.
 
@@ -82,7 +82,7 @@ npm run demo
 
 The browser suite covers desktop and mobile, stock recovery, approval, rejected quotes, policy failures, catalog/history navigation, payment simulation and an independent JavaScript audit verifier. Tests use fixtures for external providers; passing them is not proof of a real Razorpay payment or a successful OpenAI generation. The local MCP protocol test exercises discovery, schema validation and tool calls through the real SDK against a local fixture server.
 
-Playwright saves recordings, screenshots and audit JSON under ignored `test-results/`. With no development servers running, it starts an isolated database automatically. See the [recorded technical rehearsal](docs/rehearsal.webm) and [demo narration](docs/demo-script.md). The recording uses scripted agents and simulated payments; it is not a provider-verified or narrated final demo.
+Playwright saves recordings, screenshots and audit JSON under ignored `test-results/`. It starts dedicated servers on ports 5174 and 8001 with an isolated database and empty provider credentials, preserving your running demo and its data. See the [recorded technical rehearsal](docs/rehearsal.webm) and [demo narration](docs/demo-script.md). The recording uses scripted agents and simulated payments; it is not a provider-verified or narrated final demo.
 
 Download a session receipt from the UI and verify it independently:
 
